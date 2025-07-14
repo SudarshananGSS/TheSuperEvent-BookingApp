@@ -1,0 +1,21 @@
+.root {
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+    -fx-font-size: 14px;
+}
+
+.button {
+    -fx-background-color: #007acc;
+    -fx-text-fill: white;
+}
+
+.table-view {
+    -fx-selection-bar: #e0e0e0;
+}
+
+.error-label {
+    -fx-text-fill: red;
+}
+
+.success-label {
+    -fx-text-fill: green;
+}

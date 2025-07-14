@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.AdminController">
+
+    <!-- Top Section: Welcome Label -->
+    <top>
+        <Label fx:id="welcomeLabel" text="Welcome Admin" style="-fx-padding: 10; -fx-font-size: 16px;"/>
+    </top>
+
+    <!-- Center Section: Grouped Events Table and Detailed Events Table -->
+    <center>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Label text="Grouped Events" />
+            <TableView fx:id="eventGroupTable" prefHeight="150">
+                <columns>
+                    <TableColumn fx:id="groupTitleCol" text="Title" prefWidth="150"/>
+                    <TableColumn fx:id="groupVenuesCol" text="Venues" prefWidth="150"/>
+                    <TableColumn fx:id="groupOptionsCol" text="Venue-Day Options" prefWidth="250"/>
+                </columns>
+            </TableView>
+
+            <HBox spacing="5">
+                <Label text="Select Venue-Day Option:" />
+                <ChoiceBox fx:id="optionChoiceBox" />
+            </HBox>
+            <Label text="Selected Event Details" />
+            <TableView fx:id="groupEventsTable" prefHeight="60">
+                <columns>
+                    <TableColumn fx:id="detailTitleCol" text="Title" prefWidth="140" />
+                    <TableColumn fx:id="detailVenueCol" text="Venue" prefWidth="140" />
+                    <TableColumn fx:id="detailDayCol" text="Day" prefWidth="80" />
+                    <TableColumn fx:id="detailPriceCol" text="Price" prefWidth="75" />
+                    <TableColumn fx:id="detailTotalCol" text="Capacity" prefWidth="75" />
+                    <TableColumn fx:id="detailSoldCol" text="Sold" prefWidth="75" />
+                    <TableColumn fx:id="detailActiveCol" text="Active" prefWidth="75" />
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+
+    <!-- Right Section: Event Management Controls -->
+    <right>
+        <VBox spacing="10">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+            <Label text="Add/Modify Event" />
+            <Label text="Event Name" />
+            <TextField fx:id="eventNameField" promptText="Event Name" />
+            <Label text="Venue" />
+            <TextField fx:id="venueField" promptText="Venue" />
+            <Label text="Day" />
+            <ChoiceBox fx:id="dayChoiceBox" />
+            <Label text="Price" />
+            <TextField fx:id="priceField" promptText="Price" />
+            <Label text="Capacity" />
+            <TextField fx:id="capacityField" promptText="Capacity" />
+
+            <HBox spacing="5">
+                <Button text="Add Event" onAction="#handleAddEvent" />
+                <Button text="Modify Event" onAction="#handleModifyEvent" />
+            </HBox>
+            <HBox spacing="5">
+                <Button text="Delete Event" onAction="#handleDeleteEvent" />
+                <Button text="Enable Event" onAction="#handleEnableEvent" />
+                <Button text="Disable Event" onAction="#handleDisableEvent" />
+            </HBox>
+            <Button text="View All Orders" onAction="#handleViewAllOrders" />
+            <Button text="Logout" onAction="#handleLogout" />
+
+            <Label fx:id="statusLabel" style="-fx-padding: 5;"/>
+        </VBox>
+    </right>
+
+</BorderPane>
